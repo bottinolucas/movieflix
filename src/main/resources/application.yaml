@@ -17,3 +17,10 @@ spring:
   # Ativa migracoes
   flyway:
     enabled: true
+
+# Configuracoes do token JWT
+movieflix:
+  security:
+    token:
+      secret: ${JWT_SECRET:default-jwt-secret-dev}
+      salt: ${JWT_SALT:default-jwt-salt-dev}
