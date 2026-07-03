@@ -29,6 +29,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(authorize -> 
                 authorize.requestMatchers(HttpMethod.POST, "/movieflix/auth/register").permitAll() // Qualquer um pode acessar o endpoint de registro
                         .requestMatchers(HttpMethod.POST, "/movieflix/auth/login").permitAll() // Qualquer um pode acessar o endpoint de login
+                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Documentacao do Swagger liberada
                         .anyRequest().authenticated() // Precisa estar autenticado
             ) 
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class) // Adicionando o filtro de segurança antes do filtro de autenticação
