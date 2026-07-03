@@ -4,9 +4,9 @@ spring:
   
   # Conexao do Banco de Dados
   datasource:
-    url: jdbc:postgresql://localhost:5432/movieflix
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:movieflix}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   # Avisa pro Hibernate qual dialeto de banco de dados vamos usar (Nesse caso: Postgres)
